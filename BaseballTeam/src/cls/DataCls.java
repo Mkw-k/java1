@@ -7,11 +7,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import dao.MemberDao;
+import dto.HumanDto;
 
 public class DataCls extends MemberDao{
 	
 	public static void main(String[] args) {
-		MemberDao dao = new MemberDao();
+		
 //		String saveData = dao.toString();
 		
 		try {
@@ -31,7 +32,22 @@ public class DataCls extends MemberDao{
 		
 		try {
 			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file ,true)));
-			pw.println(getMemberBook().toString());
+			
+			MemberDao dao = new MemberDao();
+			HumanDto[] book = new HumanDto[5];
+			book = dao.getMemberBook();
+			System.out.println(book);
+			
+			for (HumanDto humanDto : book) {
+				System.out.println(humanDto);
+				if(humanDto != null) {
+					pw.println(humanDto);	
+				}
+				
+			}
+			
+			
+			
 			pw.close();
 			System.out.println("입력성공 !");
 		} catch (IOException e) {

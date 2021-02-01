@@ -18,20 +18,9 @@ public class MemberDao {
 	private int height;
 	
 	public MemberDao() {
-//		indexCount = 0;
-//		int number = 1;
-//		String name = "박규하";
-//		int age = 53;
-//		int height = 210;
-//		int batCount = 5;
-//		int hit = 5;
-//		double hitAvg = 5;
-//		memberBook[5] = new PitcherDto(number, name, age
-//				, height, batCount, hit, hitAvg);
-//		
-//		System.out.println(memberBook[5].toString());
 		
 	}
+	
 
 	//짝수는 타자 홀수는 투수 
 	public void insert() {

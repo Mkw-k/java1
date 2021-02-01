@@ -27,6 +27,7 @@ total : while(true) {
 			break;
 		case 4: 
 			dao.update();
+			
 			break;
 		case 5:
 			dao.saveData();
