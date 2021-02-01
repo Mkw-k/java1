@@ -1,10 +1,8 @@
 package main;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-import dao.accountDao;
-import dto.accountDto;
+import dao.listDao;
 
 public class MainClass {
 
@@ -27,8 +25,10 @@ public class MainClass {
 		*/	
 		
 		// menu
-		accountDao dao = new accountDao();
-		ArrayList<accountDto> dto = new ArrayList<accountDto>();
+		
+	listDao lDao = new listDao();
+	
+		
 		
 		
 		
@@ -40,19 +40,22 @@ public class MainClass {
 		
 		switch(choice) {
 			case 1: 
-				
+				lDao.insert();
 				break;
 			case 2: 
-				dao.delete();
+				lDao.delete();
 				break;
 			case 3: 
-				dao.select();
+				System.out.print("사용처입력 = ");
+				String use = sc.next();
+				int index = lDao.search(use);
+				lDao.print(index);
 				break;
 			case 4: 
-				dao.update();
+				lDao.update();
 				break;
 			case 5: 
-				dao.allprint();
+				lDao.allprint();
 				break;
 			case 6: 
 				System.out.println("종료합니다");
