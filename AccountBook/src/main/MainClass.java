@@ -1,9 +1,10 @@
 package main;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 import dao.accountDao;
+import dto.accountDto;
 
 public class MainClass {
 
@@ -27,11 +28,37 @@ public class MainClass {
 		
 		// menu
 		accountDao dao = new accountDao();
+		ArrayList<accountDto> dto = new ArrayList<accountDto>();
 		
-		dao.insert();
-		dao.insert();
 		
-		dao.select();
+		
+	total : while(true) {
+		System.out.println("메뉴를 입력하세요");
+		System.out.println("[1]데이터추가 [2]데이터삭제 [3]데이터검색 [4]데이터수정 [5]모두출력 [6]종료");
+		Scanner sc = new Scanner(System.in);
+		int choice = sc.nextInt();
+		
+		switch(choice) {
+			case 1: 
+				
+				break;
+			case 2: 
+				dao.delete();
+				break;
+			case 3: 
+				dao.select();
+				break;
+			case 4: 
+				dao.update();
+				break;
+			case 5: 
+				dao.allprint();
+				break;
+			case 6: 
+				System.out.println("종료합니다");
+				break total;
+		}
+	}
 		
 	/*	
 		dao.allprint();
