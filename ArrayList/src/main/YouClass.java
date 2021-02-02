@@ -45,6 +45,8 @@ public class YouClass {
 		
 		
 	}
+	
+	//검색
 	public static int method(ArrayList<MyClass> mcls) {	
 		Scanner sc = new Scanner(System.in);
 		System.out.print("검색할 사람의 이름 입력 = ");
